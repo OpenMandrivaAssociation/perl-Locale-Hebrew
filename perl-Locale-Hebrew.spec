@@ -11,7 +11,6 @@ Group:     Development/Perl
 Url:       http://www.cpan.org
 Source:    http://search.cpan.org//CPAN/authors/id/A/AU/AUTRIJUS/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module is based on code from the Unicode Consortium.
