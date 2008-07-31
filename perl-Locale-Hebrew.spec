@@ -1,6 +1,6 @@
 %define module	Locale-Hebrew
 %define version	1.04
-%define release	%mkrel 4
+%define release	%mkrel 5
 
 Name:      perl-%{module}
 Summary:   Locale-Hebrew - Bidirectional Hebrew support
