@@ -1,15 +1,15 @@
-%define module	Locale-Hebrew
-%define version	1.04
-%define release	%mkrel 5
+%define upstream_name       Locale-Hebrew
+%define upstream_version    1.04
 
-Name:      perl-%{module}
-Summary:   Locale-Hebrew - Bidirectional Hebrew support
-Version:   %{version}
-Release:   %{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+Summary:   Bidirectional Hebrew support
 License:   GPL or Artistic
 Group:     Development/Perl
-Url:       http://www.cpan.org
-Source:    http://search.cpan.org//CPAN/authors/id/A/AU/AUTRIJUS/%{module}-%{version}.tar.bz2
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source:     http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
+Patch:     Locale-Hebrew-1.04-fix-format-errors.patch
 BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
@@ -22,8 +22,10 @@ the real charset from scratch.  There might have some mistakes, though.
 One function, "hebrewflip", is exported by default.
 
 %prep
-%setup -q -n %{module}-%{version} 
-chmod -R u+w %{_builddir}/%{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version} 
+%patch -p 1
+# patching make signature check fail 
+rm -f t/0-signature.t
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -42,8 +44,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc Changes README
-%{perl_vendorlib}/*/Locale/Hebrew.pm
-%{perl_vendorlib}/*/auto/Locale/Hebrew/Hebrew.so
-%{perl_vendorlib}/*/auto/Locale/Hebrew/autosplit.ix
+%{perl_vendorarch}/Locale
+%{perl_vendorarch}/auto/Locale
 %{_mandir}/*/*
 
