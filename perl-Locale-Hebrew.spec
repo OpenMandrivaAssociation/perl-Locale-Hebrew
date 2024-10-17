@@ -8,7 +8,7 @@ Release:	4
 Summary:   Bidirectional Hebrew support
 License:   GPL+ or Artistic
 Group:     Development/Perl
-Url:       http://www.cpan.org
+Url:       https://www.cpan.org
 Source0:   http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:    Locale-Hebrew-1.04-fix-format-errors.patch
 
