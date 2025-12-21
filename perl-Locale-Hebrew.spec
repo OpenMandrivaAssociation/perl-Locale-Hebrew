@@ -12,6 +12,7 @@ Url:       https://www.cpan.org
 Source0:   http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:    Locale-Hebrew-1.04-fix-format-errors.patch
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
