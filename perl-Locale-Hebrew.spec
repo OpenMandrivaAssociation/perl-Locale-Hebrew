@@ -2,14 +2,14 @@
 %define upstream_version 1.05
 
 Name:      perl-%{upstream_name}
-Version:   %perl_convert_version %{upstream_version}
-Release:	4
+Version:   %{upstream_version}
+Release:	5
 
 Summary:   Bidirectional Hebrew support
 License:   GPL+ or Artistic
 Group:     Development/Perl
-Url:       https://www.cpan.org
-Source0:   http://www.cpan.org/modules/by-module/Locale/%{upstream_name}-%{upstream_version}.tar.gz
+Url:       https://metacpan.org/dist/Locale-Hebrew
+Source0:   https://cpan.metacpan.org/authors/id/A/AU/AUDREYT/Locale-Hebrew-%{upstream_version}.tar.gz
 Patch0:    Locale-Hebrew-1.04-fix-format-errors.patch
 
 BuildRequires:	make
