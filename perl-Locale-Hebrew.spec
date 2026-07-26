@@ -1,15 +1,13 @@
 %define upstream_name	 Locale-Hebrew
-%define upstream_version 1.05
-
 Name:      perl-%{upstream_name}
-Version:   %{upstream_version}
-Release:	5
+Version:   1.05
+Release:	6
 
 Summary:   Bidirectional Hebrew support
 License:   GPL+ or Artistic
 Group:     Development/Perl
 Url:       https://metacpan.org/dist/Locale-Hebrew
-Source0:   https://cpan.metacpan.org/authors/id/A/AU/AUDREYT/Locale-Hebrew-%{upstream_version}.tar.gz
+Source0:   https://cpan.metacpan.org/authors/id/A/AU/AUDREYT/Locale-Hebrew-%{version}.tar.gz
 Patch0:    Locale-Hebrew-1.04-fix-format-errors.patch
 
 BuildRequires:	make
@@ -26,7 +24,7 @@ the real charset from scratch.  There might have some mistakes, though.
 One function, "hebrewflip", is exported by default.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 %patch0 -p 1
 # patching make signature check fail 
 rm -f t/0-signature.t
